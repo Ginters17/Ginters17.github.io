@@ -241,4 +241,27 @@ body {
     text-align: center; /* Center the number */
 }
 
+/* Modal Text Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+.modal-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Optional: You can add a slight delay to give the modal a smoother effect */
+#modal-body {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.3s; /* Delay for the body text */
+}
+
 

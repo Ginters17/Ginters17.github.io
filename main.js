@@ -148,3 +148,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create snowflakes
     createSnowflakes();
 });
+
+document.querySelectorAll('.day').forEach(day => {
+    day.addEventListener('click', function () {
+        const dayNumber = parseInt(day.getAttribute('data-day'));
+        const gift = getGiftForDay(dayNumber);
+
+        // Show the modal
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        
+        modal.style.display = 'block'; // Show modal
+        modalTitle.textContent = `${dayNumber}. dienas dāvana`;
+        modalBody.textContent = gift;
+
+        // Add fade-in animation for modal text
+        modalTitle.style.animation = 'fadeIn 0.5s ease-out';
+        modalBody.style.animation = 'fadeIn 0.8s ease-out forwards';
+        modalBody.style.animationDelay = '0.5s'; // Optional delay for effect
+    });
+});
+
