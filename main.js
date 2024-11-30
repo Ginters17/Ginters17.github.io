@@ -29,7 +29,7 @@ document.querySelectorAll('.day').forEach(day => {
             modal.style.display = 'block';
 
             // Set modal content correctly
-            modalTitle.textContent = `Day ${dayNumber} Gift`; // Title update
+            modalTitle.textContent = `${dayNumber}. dienas dāvana`; // Title update
             modalBody.textContent = gift; // Gift description update
         } else if (dayNumber > currentDay) {
             // Add shake effect if future day is clicked
@@ -44,32 +44,32 @@ document.querySelectorAll('.day').forEach(day => {
 // Function to get the gift for a specific day
 function getGiftForDay(day) {
     const gifts = {
-        1: 'Chocolate!',
-        2: 'Candy Cane!',
-        3: 'Masāža',
-        4: 'Holiday Sticker!',
-        5: 'Christmas Cookie!',
-        6: 'Holiday Ornament!',
-        7: 'Festive Candle!',
-        8: 'Winter Scarf!',
-        9: 'Handmade Card!',
-        10: 'Mittens!',
-        11: 'Gingerbread House!',
-        12: 'Christmas Movie!',
-        13: 'Hot Cocoa Mix!',
-        14: 'Cozy Blanket!',
-        15: 'Jingle Bell!',
-        16: 'Snowman Kit!',
-        17: 'Christmas Puzzle!',
-        18: 'Reindeer Antlers!',
-        19: 'Gift Card!',
-        20: 'Holiday Mug!',
-        21: 'Festive Socks!',
-        22: 'Baking Set!',
-        23: 'Christmas Storybook!',
-        24: 'Christmas Surprise!'
+        1: 'Ziedi vislabākajai draudzenei',
+        2: 'Ko Tu vēlies vakariņās?',
+        3: 'Buču pievedums',
+        4: 'Avenes saldējums',
+        5: 'Vakarā skatamies ko Tu vēlies',
+        6: 'Nešmaucies 🤭',
+        7: 'Masāža',
+        8: 'Nešmaucies 🤭',
+        9: 'Nešmaucies 🤭',
+        10: 'Nešmaucies 🤭',
+        11: 'Nešmaucies 🤭',
+        12: 'Nešmaucies 🤭',
+        13: 'Nešmaucies 🤭',
+        14: 'Striptīzs',
+        15: 'Nešmaucies 🤭',
+        16: 'Nešmaucies 🤭',
+        17: 'Nešmaucies 🤭',
+        18: 'Nešmaucies 🤭',
+        19: 'Melanholiskais valsis',
+        20: 'Nešmaucies 🤭',
+        21: 'Cepam piparkūkas',
+        22: 'Nešmaucies 🤭',
+        23: 'Nešmaucies 🤭',
+        24: 'Nešmaucies 🤭'
     };
-    return gifts[day] || 'No gift for today!';
+    return gifts[day] || 'Kaut kas nogāja greizi :/ Dāvanā buča';
 }
 
 // Close the modal when the "x" is clicked
@@ -90,7 +90,17 @@ window.addEventListener('click', function(event) {
 function createSnowflakes() {
     const body = document.body;
 
-    for (let i = 0; i < 50; i++) { // Create 50 snowflakes
+    // Determine the number of snowflakes based on screen size
+    let snowflakeCount;
+    if (window.innerWidth < 468) {
+        snowflakeCount = 15; // Fewer snowflakes for small screens
+    } else if (window.innerWidth < 768) {
+        snowflakeCount = 30; // Moderate number for medium screens
+    } else {
+        snowflakeCount = 50; // Full snowflake count for larger screens
+    }
+
+    for (let i = 0; i < snowflakeCount; i++) {
         const snowflake = document.createElement('div');
         snowflake.className = 'snowflake';
         snowflake.textContent = '❄'; // Snowflake character
@@ -109,7 +119,32 @@ function createSnowflakes() {
     }
 }
 
-// Call the createSnowflakes function as needed
 document.addEventListener('DOMContentLoaded', () => {
+    // Highlight current day and mark future/past days
+    document.querySelectorAll('.day').forEach(day => {
+        const dayNumber = parseInt(day.getAttribute('data-day'));
+
+        if (dayNumber > currentDay) {
+            day.classList.add('future-day');
+        } else if (dayNumber === currentDay) {
+            day.classList.add('current-day');
+        } else {
+            day.classList.add('opened-day');
+        }
+    });
+
+    // Scroll to the current day's box on smaller screens
+    if (window.innerWidth < 768) {
+        const currentDayBox = document.querySelector('.current-day');
+        if (currentDayBox) {
+            currentDayBox.scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling
+                block: 'center', // Center the day box vertically
+                inline: 'center' // Center the day box horizontally
+            });
+        }
+    }
+
+    // Create snowflakes
     createSnowflakes();
 });
