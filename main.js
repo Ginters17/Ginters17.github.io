@@ -56,7 +56,7 @@ function getGiftForDay(day) {
         5: 'Vakarā skatamies ko Tu vēlies',
         6: 'Digitālais kupons: Nomazgā traukus',
         7: 'Masāža',
-        8: 'Nešmaucies 🤭',
+        8: 'Serenāde 🍬',
         9: 'Nešmaucies 🤭',
         10: 'Digitālais kupons: Bbeidz spēlēt datoru',
         11: 'Nešmaucies 🤭',
