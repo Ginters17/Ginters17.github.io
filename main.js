@@ -58,7 +58,7 @@ function getGiftForDay(day) {
         7: 'Masāža',
         8: 'Serenāde 🍬',
         9: 'Ceļoju uz vietām, kur sviedri tek un muskuļi aug, bet dzīvoju vienviet kaut aizrāda draugs',
-        10: 'Digitālais kupons: Bbeidz spēlēt datoru',
+        10: 'Digitālais kupons: beidz spēlēt datoru',
         11: 'Nešmaucies 🤭',
         12: 'Nešmaucies 🤭',
         13: 'Nešmaucies 🤭',
