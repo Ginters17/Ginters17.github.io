@@ -61,7 +61,7 @@ function getGiftForDay(day) {
         10: 'Našķis princesītei',
         11: 'Našķis princesītes princesītei',
         12: 'Buču pievedums',
-        13: '',
+        13: 'Piparkūkas',
         14: '🍒💦',
         15: 'Brokastis gūltā',
         16: 'Nešmaucies 🤭',
