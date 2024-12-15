@@ -63,7 +63,7 @@ function getGiftForDay(day) {
         12: 'Buču pievedums',
         13: 'Piparkūkas',
         14: '🍒💦',
-        15: 'kupons: 👅',
+        15: 'Staipīgs un garšīgs',
         16: 'Nešmaucies 🤭',
         17: 'Nešmaucies 🤭',
         18: 'Nešmaucies 🤭',
