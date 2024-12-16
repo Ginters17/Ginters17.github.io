@@ -64,7 +64,7 @@ function getGiftForDay(day) {
         13: 'Piparkūkas',
         14: '🍒💦',
         15: 'Staipīgs un garšīgs',
-        16: 'Nešmaucies 🤭',
+        16: 'Balts mutē',
         17: 'Nešmaucies 🤭',
         18: 'Nešmaucies 🤭',
         19: 'Melanholiskais valsis',
